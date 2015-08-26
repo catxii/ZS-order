@@ -1,0 +1,309 @@
+//基础公共样式文件
+
+/*//h5调试用
+//.preloader-indicator-modal,.preloader-indicator-overlay {
+//  display: none!important;
+//}*/
+ 
+/*公共样式*/
+html,body {
+    overflow-x: hidden;
+    background:@default-color;
+}
+@font-face {
+    font-family: "iconfont-sm";
+    src: url('../libs/sui/fonts/ratchicons.eot');
+    src: url('../libs/sui/fonts/ratchicons.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../libs/sui/fonts/ratchicons.woff') format('woff'), /* chrome、firefox */
+    url('../libs/sui/fonts/ratchicons.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../libs/sui/fonts/ratchicons.svg#iconfont') format('svg');
+
+    /* IE9*/
+    /* iOS 4.1- */
+}
+
+//图片路径配置
+@imgsrc:"../img";
+
+// 颜色参数-功能性划分
+@background-content-color:#f3f4f6; //背景内容区域颜色
+@default-color:#276ccb; //通用主色，用于通用的按钮背景颜色，云包公项目为该色值的蓝色 
+@default-dark-color:#0675bb; //通用主色加深，可用不限于按钮点击时。
+@opposite-dark-color:#fff; //反差深色的背景的浅色字体类用色
+@gray-tint-color:#efefef; //浅灰色
+@danger-color:#fc2a2a; //危险操作，警告文字
+@warning-color:#ff9c00; //强调文字颜色
+@warning-bg:#f7e2ca; //强调区域背景色
+@unimportance-color:#afafaf; //次要的文字颜色
+
+// 颜色种类划分
+@black:#2b2c33;
+@white:#fff;
+@gray:#efefef; //灰色背景底色
+@red:#ff0000;
+@orange:#fa6a32;
+@blue:#3b7ffd;
+@green:green;
+
+a {
+    color: @blue;
+}
+.default-color {   //通用主色字体用色
+    color: @default-color;
+    &:active {
+        color: @default-dark-color;
+    }
+}
+.danger-color {    //危险操作字体用色
+    color: @danger-color;
+}
+.warning-color {  //强调字体用色
+    color: @warning-color;
+}
+.unimportance-color {  //次要字体用色
+    color: @unimportance-color;
+}
+.price {   //商品现价统一颜色
+    color: @danger-color;
+}
+.bg-ball {  //圆形背景，主要用于图标圆背景框
+    background: @green;
+    color: @white;
+    border-radius: 1rem;
+    padding:0.1rem;
+    font-size: 0.6rem;
+    &.green-bg {
+        background: @green;
+    }
+}
+
+//背景色定义
+.white-bg {
+    background: @white!important;
+    color: @black!important;
+}
+.gray-bg {
+    background: @background-content-color!important;
+}
+
+
+//字体尺寸定义
+@font-size-large:.9rem; //特大尺寸（页面标题）
+@font-size-biger:.85rem;   //加大尺寸（头部的文字按钮、个人中心姓名、）
+@font-size-big:.8rem; //大尺寸 （文章标题、列表头部文字）
+@font-size-default:.75rem; //标准尺寸（文本、阅读性文字、列表内容的文字）
+@font-size-small:.7rem;   //小尺寸 （注释文字 、说明文字）
+@font-size-mini:.6rem;    //迷你尺寸 （）
+
+//公共区域文字定义
+.title{ //页面标题
+    font-size: @font-size-large;
+}
+.fix-top-header {
+    select {
+        font-size: @font-size-large;
+    }
+}
+.list-block {
+    .item-subtitle {
+        font-size: @font-size-default;
+    }
+}
+.card-header {
+    font-size:@font-size-big;
+}
+.profiles-list {
+    font-size: @font-size-big;
+}
+.list-block,.list-block input[type="text"], .list-block input[type="password"], .list-block input[type="search"], .list-block input[type="email"], .list-block input[type="tel"], .list-block input[type="url"], .list-block input[type="date"], .list-block input[type="datetime-local"], .list-block input[type="time"], .list-block input[type="number"], .list-block select, .list-block textarea {
+    font-size: @font-size-big;
+}
+.profiles-user-name {
+    font-size:@font-size-biger;
+}
+
+/*公共区域-内容content区域*/
+.content {
+    background: @background-content-color;
+}
+
+/*公共区域-底部导航*/
+
+
+/*公共区域-顶部导航*/
+
+
+/*图标定义*/
+
+
+/*按钮样式定义*/
+.button:active {
+    color:@default-dark-color;
+    border:1px solid @default-dark-color;
+} 
+
+
+/* 排版布局 */ 
+ul,ol {
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+.inline-block-ul {
+    letter-spacing: -0.15rem;
+    word-spacing: -0.15rem;
+    li {
+        display: inline-block;
+        vertical-align: middle;
+        letter-spacing: 0;
+        word-spacing: 0;
+    }
+}
+.list-block {
+    margin: 0.5rem 0;
+    li {
+        border-bottom: @border-gray-tint;
+        .item-inner:after {
+            display: none;
+        }
+    }
+    &.nomargin-list-block { //清理掉列表的边距
+        margin:0;
+    }
+    &.no-fix-width { //去掉列表内容固定宽度
+        .item-title {
+            width: auto; 
+        }
+    }
+}
+.list-font-info {  //订单信息类字体大小和黑色字体
+    color: @black;
+    font-size:@font-size-small;
+}
+.font-overflow {  //字体溢出截取添加"..."处理,使用时需要给元素添加宽度
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.fix-center-middle {    //绝对定位垂直水平居中，兼容IE9以上
+    position: absolute;
+    left: 50%;
+    top:50%;
+    -webkit-transform: translate3D(-50%, -50%, 0);
+    -ms-transform: translate3D(-50%, -50%, 0);
+    -o-transform: translate3D(-50%, -50%, 0);
+    transform: translate3D(-50%, -50%, 0);
+    &.fixed {  //追加固定定位
+        position: fixed;
+    }
+}
+.fix-middle {    //绝对定位垂直水平居中，兼容IE9以上
+    position: absolute;
+    top:50%;
+    -webkit-transform: translate3D(0%, -50%, 0);
+    -ms-transform: translate3D(0%, -50%, 0);
+    -o-transform: translate3D(0%, -50%, 0);
+    transform: translate3D(0%, -50%, 0);
+    &.fixed {  //追加固定定位
+        position: fixed;
+    }
+}
+.fix-bottom-bar {    //底部固定栏
+    position: fixed;
+    bottom: 2.2rem;
+    &.white-bar {
+        background: @white;
+        border-top:@border-gray-tint;
+        line-height: 2rem;
+        .button {
+            .position-right;
+        }
+    }
+}
+.fix-top-header {  //固定在标题栏
+    .fix-center-middle;
+    &.list-block {
+        margin: 0;
+        select {
+            color:@opposite-dark-color;
+            padding-right: 1rem;
+            position: relative;
+            z-index: 21;
+            width: auto;
+        }
+        .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: @font-size-big;
+        }
+    }
+}
+.fix-top-bar {    //顶部挨着状态栏下的固定位置
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    z-index: 20;
+}
+
+.position-right {  //绝对定位到右侧
+    position: absolute;
+    right: 0.5rem;
+}
+.content-padded-large { //内容区域填充加大号
+    padding: 2rem;
+} 
+.btn-right {  //文字居右显示
+    text-align:right;
+}
+.btn-center {
+    text-align: center;
+}
+.padding {    //区域填充，可用于内容区域需要填充的地方
+    padding:.5rem;
+}
+.padding-plus {    //区域填充，可用于内容区域需要填充的地方
+    padding:1rem;
+}
+.no-padding { //去掉容器的填充
+    padding:0!important;
+}
+.no-padding-margin {
+    padding:0;
+    margin:0;
+}
+.full-box {
+    margin-left:0!important;
+    margin-right:0!important;
+}
+
+// 边框颜色和样式
+@border-gray: 0.05rem solid #ccc; //标准下边框实线颜色
+@border-gray-dashed: 0.05rem dashed #ccc; //标准下边框虚线颜色
+@border-gray-tint: 0.05rem solid #efefef; //浅色下边框实线颜色
+@border-gray-tint-dashed: 0.05rem dashed #efefef; //浅色下边框虚线颜色
+@border-gray-dark: 0.05rem solid #a5a5a5; //深灰色下边框实线颜色
+@border-gray-dark-dashed: 0.05rem dashed #a5a5a5; //深灰色下边框虚线颜色
+
+@border-warning:0.05rem solid @warning-color;
+@border-warning-dashed:0.05rem dashed @warning-color;
+
+.border-gray {
+    border:0.05rem solid #ccc;
+    &.bottom {
+        border-width:0 0 0.05rem 0;
+    }
+    &.dashed {
+        border-style: dashed;
+    }
+    &.tint{
+        border-color: #efefef;
+    }
+}
