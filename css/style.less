@@ -65,8 +65,123 @@
 	color: @unimportance-color;
 	font-weight: normal;
 	position: absolute;
-	bottom: 1rem;
+	bottom: .8rem;
 	text-align: center;
 	width: 100%;
 	font-size: @font-size-mini;
+	.small {
+		font-size: @font-size-mini;
+		-webkit-transform: scale(75%); /* 相当于 9px */
+		transform: scale(75%);
+	}
+}
+
+//首页样式
+.index-h1 {
+	font-size:@font-size-default;
+	text-align: center;
+	color: @gray-dark;
+	margin:1rem 0 1.5rem;
+}
+.index-kit-list {
+	.col-33 {
+		position: relative;
+	}
+	text-align: center;
+	.kit-button {
+		border:.05rem solid @default-color;
+		background-color:@white;
+		display: inline-block;
+		text-align: center;
+		border-radius: 10rem;
+		overflow: hidden;
+		padding: .1rem;
+		width: 3rem;
+		height: 3rem;
+		position: relative;
+		&:active {
+			opacity: .5;
+		}
+		&.ico-all{
+			background-size: 1.4rem;
+			background-position: center;
+			&.ico-index-1 {
+				background-image: url("@{imgsrc}/index-ico_1.png");
+			}
+			&.ico-index-2 {
+				background-image: url("@{imgsrc}/index-ico_2.png");
+			}
+			&.ico-index-3 {
+				background-image: url("@{imgsrc}/index-ico_3.png");
+			}
+			&.ico-index-4 {
+				background-image: url("@{imgsrc}/index-ico_4.png");
+			}
+			&.ico-index-5 {
+				background-image: url("@{imgsrc}/index-ico_5.png");
+			}
+			&.ico-index-6 {
+				background-image: url("@{imgsrc}/index-ico_6.png");
+			}
+			&.ico-index-7 {
+				background-image: url("@{imgsrc}/index-ico_7.png");
+			}
+			&.ico-index-8 {
+				background-image: url("@{imgsrc}/index-ico_8.png");
+			}
+		}
+	}
+	.orange {
+		.kit-button {
+			border:.05rem solid @orange;
+		}
+	}
+	span {
+		display: block;
+		&.index-ico-name {
+			font-size: @font-size-mini;
+			margin: 0rem 0 .8rem;
+			color: @black;
+		}
+	}
+	.number {
+		background: @red;
+		color: @white;
+		text-align: center;
+		line-height: 1rem;
+		padding: .05rem .35rem;
+		display: none;
+		position: absolute;
+		right: .45rem;
+		top: 0;
+		border-radius: 10rem;
+		font-size: @font-size-small;
+		font-style: normal;
+	}	
+	.has-num {
+		.number {
+			display: block;
+		}
+	}
+	.unopen {
+		display: none;
+	}
+	.un-open {
+		.kit-button {
+			opacity: 1;
+		}
+		.unopen{
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			background: @black;
+			color: @white;
+			font-size: @font-size-mini;
+			line-height: 3rem;
+			opacity: .8;
+		}
+	}
 }
