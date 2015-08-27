@@ -337,4 +337,43 @@ ul,ol {
         background-image:url("@{imgsrc}/login-ico_10.gif");
         background-position: center; 
     }
+    &.alert-ico {
+        width: .7rem;
+        height: .8rem;
+        margin-right: .2rem;
+        background-image: url("@{imgsrc}/alert-ico.png");
+    }
+}
+
+.alert-bar {
+    background: url("@{imgsrc}/black-bg.png");
+    width: 96%;
+    position: absolute;
+    top: 2rem;
+    left:50%;
+    margin-left: -48%;
+    color: @white;
+    font-size: @font-size-mini;
+    text-align: center;
+    border-radius: .2rem;
+    line-height: 2rem;
+}
+
+// 顶部栏
+.bar-default {
+    background:@default-color;
+    .title {
+        color: @white;
+        font-weight: 100;
+    }
+    .button-link {
+        color: @white;
+    }
+}
+.empty-area-bg {
+    background: url("@{imgsrc}/empty-bg_03.gif") center no-repeat;
+    background-size: 5rem;
+    width: 80%;
+    height: 10rem;
+    margin: 1rem auto;
 }
