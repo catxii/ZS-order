@@ -10,3 +10,5 @@ $(".show-btn").click(function(){
 		$("#password").attr("type","password");
 	}
 })
+
+$()
