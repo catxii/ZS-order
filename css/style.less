@@ -1,17 +1,67 @@
 /*//页面样式文件*/
-
+@import url("base.less");
 /*//首页*/
-@imgsrc:"../img";
 
 .index-logo {
-    background: url("@{imgsrc}/index-logo_03.gif") no-repeat center ;
+    background: url("@{imgsrc}/index-logo_03.gif") no-repeat center;
     background-size:100%;
     width: 60%;
     height: 60%; 
-    margin:1rem auto;
+    margin:1rem auto; 
 }
 .slogan { 
 	color: @white;
 	position:absolute;
-	bottom: 5rem;
+	bottom: 2rem;
+	text-align: center;
+	width: 100%;
+	font-size:@font-size-default;
  }
+
+ // 登陆页
+ .login-title {
+ 	color: @default-color;
+ 	text-align: center;
+ 	margin: 2rem 0 2rem;
+ }
+ .login-page {
+ 	.login-btn-group {
+ 		margin-top: 1rem;
+ 	}
+ }
+ .list-group-login {
+ 	border-radius: .5rem;
+ 	overflow: hidden;
+ 	border:@border-gray-tint;
+ 	li {
+ 		&:last-child {
+ 			border:none;
+ 		}
+ 	}
+ }
+ .show-btn {
+ 	position: absolute;
+ 	right: .7rem;
+ 	top: .7rem;
+	.ico-show-password {
+		background-image:url("@{imgsrc}/login-ico_07.gif");
+		width: 3rem;
+		height: 1.2rem;
+	}	
+	&.active {
+		.ico-show-password {
+			background-position: left bottom;
+		}
+	}
+ }
+
+//底部声明
+.page-footer-info {
+	color: @unimportance-color;
+	font-weight: normal;
+	position: absolute;
+	bottom: 1rem;
+	text-align: center;
+	width: 100%;
+	font-size: @font-size-mini;
+}

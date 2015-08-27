@@ -9,6 +9,7 @@
 html,body {
     overflow-x: hidden;
     background:@default-color;
+    max-width: 20rem;
 }
 @font-face {
     font-family: "iconfont-sm";
@@ -137,14 +138,22 @@ a {
 
 
 /*按钮样式定义*/
-.button:active {
-    color:@default-dark-color;
-    border:1px solid @default-dark-color;
-} 
+.button {
+    &.button-default {
+        background: @default-color;
+        color: @white;
+        &:active {
+            color:@default-dark-color;
+            border:1px solid @default-dark-color;
+        } 
+    }
+    
+}
 
 
 /* 排版布局 */ 
 ul,ol {
+    margin: 0;
     padding: 0;
     li {
         list-style: none;
@@ -287,7 +296,7 @@ ul,ol {
 // 边框颜色和样式
 @border-gray: 0.05rem solid #ccc; //标准下边框实线颜色
 @border-gray-dashed: 0.05rem dashed #ccc; //标准下边框虚线颜色
-@border-gray-tint: 0.05rem solid #efefef; //浅色下边框实线颜色
+@border-gray-tint: 0.05rem solid #d3d3d3; //浅色下边框实线颜色
 @border-gray-tint-dashed: 0.05rem dashed #efefef; //浅色下边框虚线颜色
 @border-gray-dark: 0.05rem solid #a5a5a5; //深灰色下边框实线颜色
 @border-gray-dark-dashed: 0.05rem dashed #a5a5a5; //深灰色下边框虚线颜色
@@ -305,5 +314,27 @@ ul,ol {
     }
     &.tint{
         border-color: #efefef;
+    }
+}
+
+
+// 图标定义
+.ico-all { //图标公共样式，定义图标的形态和图片等公用属性
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center top;
+    &.ico-username {
+        width: .9rem;
+        height: 2rem;
+        background-image:url("@{imgsrc}/login-ico_03.gif");
+        background-position: center;
+    }
+    &.ico-password {
+        width: .9rem; 
+        height: 2rem;
+        background-image:url("@{imgsrc}/login-ico_10.gif");
+        background-position: center; 
     }
 }
