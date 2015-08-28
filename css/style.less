@@ -200,6 +200,10 @@
 	&.unimportance {
 		color: @unimportance-color;
 	}
+	.phone-number {
+		font-size: @font-size-default;
+		margin-right: .1rem;
+	}
 }
 .card-footer {
 	span {
@@ -228,4 +232,37 @@
 	display: block;
 	width: 100%;
 	text-align:right;
+}
+.phone-number {
+	color: @default-color;
+	vertical-align: middle;
+}
+.list-noborder-small {
+	ul{
+		padding-bottom:.5rem;
+		li {
+			border-bottom: none;
+			padding: 0!important;
+			.item-inner {
+				padding: 0;
+				&.multiple {
+					padding: .25rem;
+					display: block;
+					.item-title {
+						float: left;
+					}
+					.item-after {
+						float: right;
+					}
+				}
+			}
+			&.small {
+				font-size:70%;
+				min-height: 1.1rem;
+				.item-inner {
+					min-height: 1.1rem;
+				}
+			}
+		}
+	}
 }
