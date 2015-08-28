@@ -8,7 +8,6 @@
 /*公共样式*/
 html,body {
     overflow-x: hidden;
-    max-width: 20rem;
 }
 @font-face {
     font-family: "iconfont-sm";
@@ -23,7 +22,7 @@ html,body {
 }
 
 //图片路径配置
-@imgsrc:"../img";
+@src:"../img";
 
 // 颜色参数-功能性划分
 @background-content-color:#ebebeb; //背景内容区域颜色
@@ -39,7 +38,7 @@ html,body {
 // 颜色种类划分
 @black:#282828;
 @white:#fff;
-@gray:#efefef; //灰色背景底色
+@gray:#c3bdbd; //灰色背景底色 (取消按钮、tab次要选项文字颜色)
 @gray-dark:#565555; //深灰色（首页顶部的酒店名称）
 @red:#ff0000;
 @orange:#ff9a14;
@@ -90,7 +89,7 @@ a {
 
 //字体尺寸定义
 @font-size-large:.9rem; //特大尺寸（页面标题）
-@font-size-biger:.85rem;   //加大尺寸（头部的文字按钮、个人中心姓名、）
+@font-size-bigger:.85rem;   //加大尺寸（头部的文字按钮、个人中心姓名、）
 @font-size-big:.8rem; //大尺寸 （文章标题、列表头部文字）
 @font-size-default:.75rem; //标准尺寸（文本、阅读性文字、列表内容的文字）
 @font-size-small:.7rem;   //小尺寸 （注释文字 、说明文字）
@@ -120,7 +119,7 @@ a {
     font-size: @font-size-big;
 }
 .profiles-user-name {
-    font-size:@font-size-biger;
+    font-size:@font-size-bigger;
 }
 
 /*公共区域-内容content区域*/
@@ -139,6 +138,13 @@ a {
 
 /*按钮样式定义*/
 .button {
+    line-height: 1.5rem;
+    height:1.5rem;
+    padding:0 1rem;
+    &.button-fill {
+        line-height: 1.5rem;
+        height:1.5rem;
+    }
     &.button-default {
         background: @default-color;
         color: @white;
@@ -147,7 +153,22 @@ a {
             border:1px solid @default-dark-color;
         } 
     }
+    &.button-light {
+        &.button-fill {
+            background: @gray;
+        }
+    }
+    &.button-warning {
+        &.button-fill {
+            background: @orange;
+        }
+    }
     
+}
+.buttons-tab {
+    .button {
+        color: @gray;
+    } 
 }
 
 
@@ -281,6 +302,10 @@ ul,ol {
 .padding-plus {    //区域填充，可用于内容区域需要填充的地方
     padding:1rem;
 }
+.no-sides-margin { //去掉两侧的边距
+    margin-left:0;
+    margin-right:0;
+}
 .no-padding { //去掉容器的填充
     padding:0!important;
 }
@@ -328,25 +353,31 @@ ul,ol {
     &.ico-username {
         width: .9rem;
         height: 2rem;
-        background-image:url("@{imgsrc}/login-ico_03.gif");
+        background-image:url("@{src}/login-ico_03.gif");
         background-position: center;
     }
     &.ico-password {
         width: .9rem; 
         height: 2rem;
-        background-image:url("@{imgsrc}/login-ico_10.gif");
+        background-image:url("@{src}/login-ico_10.gif");
         background-position: center; 
     }
     &.alert-ico {
         width: .7rem;
         height: .8rem;
         margin-right: .2rem;
-        background-image: url("@{imgsrc}/alert-ico.png");
+        background-image: url("@{src}/alert-ico.png");
+    }
+    &.ico-clock {
+        background-image: url("@{src}/clock-ico_03.png");
+        margin-right:.2rem;
+        width: .7rem;
+        height: .7rem;
     }
 }
 
 .alert-bar {
-    background: url("@{imgsrc}/black-bg.png");
+    background: url("@{src}/black-bg.png");
     width: 96%;
     position: absolute;
     top: 2rem;
@@ -371,7 +402,7 @@ ul,ol {
     }
 }
 .empty-area-bg {
-    background: url("@{imgsrc}/empty-bg_03.gif") center no-repeat;
+    background: url("@{src}/empty-bg_03.gif") center no-repeat;
     background-size: 5rem;
     width: 80%;
     height: 10rem;

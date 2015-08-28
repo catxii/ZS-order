@@ -12,5 +12,6 @@
 <li>(已完成) login.html //登陆页面</li>
 <li>(已完成) index.html //app首页</li>
 <li>(已完成) order-empty.html //空的订单页面</li>
+<li>(已完成) order-video-index.html //视频点播页面（内含操作表、文字输入确认框等）/li>
 </ol>
 

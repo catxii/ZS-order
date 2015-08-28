@@ -1,3 +1,4 @@
+
 /*//页面样式文件*/
 @import url("base.less");
 
@@ -8,8 +9,8 @@
 //首页
 
 .index-logo {
-    background: url("@{imgsrc}/index-logo_03.gif") no-repeat center;
-    background-size:100%;
+    background: url("imgsrc@{}/index-logo_03.gif") no-repeat center;
+    background-size:6rem;
     width: 60%;
     height: 60%; 
     margin:1rem auto; 
@@ -49,7 +50,7 @@
  	right: .7rem;
  	top: .7rem;
 	.ico-show-password {
-		background-image:url("@{imgsrc}/login-ico_07.gif");
+		background-image:url("@{src}/login-ico_07.gif");
 		width: 3rem;
 		height: 1.2rem;
 	}	
@@ -106,28 +107,28 @@
 			background-size: 1.4rem;
 			background-position: center;
 			&.ico-index-1 {
-				background-image: url("@{imgsrc}/index-ico_1.png");
+				background-image: url("@{src}/index-ico_1.png");
 			}
 			&.ico-index-2 {
-				background-image: url("@{imgsrc}/index-ico_2.png");
+				background-image: url("@{src}/index-ico_2.png");
 			}
 			&.ico-index-3 {
-				background-image: url("@{imgsrc}/index-ico_3.png");
+				background-image: url("@{src}/index-ico_3.png");
 			}
 			&.ico-index-4 {
-				background-image: url("@{imgsrc}/index-ico_4.png");
+				background-image: url("@{src}/index-ico_4.png");
 			}
 			&.ico-index-5 {
-				background-image: url("@{imgsrc}/index-ico_5.png");
+				background-image: url("@{src}/index-ico_5.png");
 			}
 			&.ico-index-6 {
-				background-image: url("@{imgsrc}/index-ico_6.png");
+				background-image: url("@{src}/index-ico_6.png");
 			}
 			&.ico-index-7 {
-				background-image: url("@{imgsrc}/index-ico_7.png");
+				background-image: url("@{src}/index-ico_7.png");
 			}
 			&.ico-index-8 {
-				background-image: url("@{imgsrc}/index-ico_8.png");
+				background-image: url("@{src}/index-ico_8.png");
 			}
 		}
 	}
@@ -152,7 +153,8 @@
 		padding: .05rem .35rem;
 		display: none;
 		position: absolute;
-		right: .45rem;
+		left: 50%;
+		margin-left: .8rem;
 		top: 0;
 		border-radius: 10rem;
 		font-size: @font-size-small;
@@ -186,4 +188,44 @@
 	}
 }
 
-// 
+// 功能列表页面
+
+.card-title {
+	color: @default-color;
+	font-size: @font-size-large;
+	vertical-align: middle;
+	&.warning {
+		color: @warning-color;
+	}
+	&.unimportance {
+		color: @unimportance-color;
+	}
+}
+.card-footer {
+	span {
+		vertical-align: middle;
+	}
+	.inline-block-ul {
+		li {
+			margin-left: .5rem;
+		}
+	}
+}
+.card-header,.card-footer,.card-content{
+	padding-right:.5rem;
+	padding-left:.5rem;
+}
+.video-content-font {
+	color: @black;
+	font-size:@font-size-bigger;
+	font-weight: normal;
+	margin: .5rem 0;
+}
+.actions-modal-button {
+	font-size: @font-size-default;
+}
+.info-block-right {
+	display: block;
+	width: 100%;
+	text-align:right;
+}
