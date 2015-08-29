@@ -9,7 +9,7 @@
 //首页
 
 .index-logo {
-    background: url("imgsrc@{}/index-logo_03.gif") no-repeat center;
+    background: url("@{src}/index-logo_03.gif") no-repeat center;
     background-size:6rem;
     width: 60%;
     height: 60%; 
@@ -218,6 +218,9 @@
 .card-header,.card-footer,.card-content{
 	padding-right:.5rem;
 	padding-left:.5rem;
+	.default-color {
+		color: @default-color;
+	}
 }
 .video-content-font {
 	color: @black;
@@ -257,7 +260,7 @@
 				}
 			}
 			&.small {
-				font-size:70%;
+				font-size:@font-size-small;
 				min-height: 1.1rem;
 				.item-inner {
 					min-height: 1.1rem;
@@ -265,4 +268,7 @@
 			}
 		}
 	}
+}
+.card {
+	font-size: @font-size-mini;
 }
