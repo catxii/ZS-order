@@ -82,3 +82,50 @@ $(document).on('click', '.alert-text-title-callback',function () {
       });
   });
 
+//订单滑动效果
+$(function() {
+  function swiperAction(){
+    for(var i=0;i < $(".swiper-container").length;i++){
+      var index = i+1;
+      $(".swiper-container"+index).swiper({
+        pagination : '.swiper-container'+index+' .swiper-pagination'
+      });
+    }
+  }
+  swiperAction();
+  $(document).on('click','.tab-link',function(){
+    swiperAction();
+  })
+});
+
+
+// 添加'refresh'监听器
+  //下拉刷新页面
+  $(document).on("pageInit", "#page-ptr", function(e, id, page) {
+    var $content = $(page).find(".content").on('refresh', function(e) {
+      // 模拟2s的加载过程
+      setTimeout(function() {
+        var cardHTML = '<div class="card">' +
+          '<div class="card-header">标题</div>' +
+          '<div class="card-content">' +
+          '<div class="card-content-inner">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容' +
+          '</div>' +
+          '</div>' +
+          '</div>';
+
+        $content.find('.card-container').prepend(cardHTML);
+        // 加载完毕需要重置
+        $.pullToRefreshDone($content);
+      }, 2000);
+    });
+  });
+
+
+  //调取时间
+
+  $("#datetime-picker").datetimePicker({
+    toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">选择日期和时间</h1>\
+    </header>'
+  });

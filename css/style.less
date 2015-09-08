@@ -264,6 +264,7 @@
 				min-height: 1.1rem;
 				.item-inner {
 					min-height: 1.1rem;
+					background: @gray-tint-color;
 				}
 			}
 		}
@@ -271,4 +272,96 @@
 }
 .card {
 	font-size: @font-size-mini;
+}
+.page-unimportant-title {
+	color: @unimportance-color;
+	margin:.5rem auto;
+}
+.room-list {
+	.col-33 {
+		margin-bottom: .5rem;
+	}
+}
+
+.list-block .item-link .item-inner {
+	&.small {
+		background-size:.3rem;
+		// background-position: 94% center!important; 
+	}
+}
+.item-after {
+	&.small {
+		font-size: 70%;
+	}
+}
+
+.password-list {
+	margin-top: 2rem;
+	ul {
+		background: none;
+		li {
+			border:none;
+			font-size: @font-size-default;
+			margin-bottom: .25rem;
+			input {
+				background: @white!important;
+				border:@border-gray-tint!important;
+				border-radius: .4rem!important;
+			}
+		}
+	}
+}
+
+//关于我们页面
+.about-logo {
+	background: url('@{src}/logo-about-ico_03.png') center no-repeat;
+	width: 4rem;
+	height: 4rem;
+	background-size: 100%;
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+	top: 3rem;
+}
+.about-version {
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 8rem;
+	text-align: center;
+}
+.about-phone {
+	background-size: 100%;
+	position: absolute;
+	width: 6rem;
+	bottom: 2rem;
+	text-align: center;
+	left: 50%;
+	margin-left: -3rem;
+	background: @default-color;
+	color: @white;
+	border-radius: .25rem;
+	font-size: @font-size-mini;
+	line-height: 1.5rem;
+	.icon {
+		font-size: @font-size-big;
+	}
+}
+
+.card-finish-box {
+	.card-content {
+		border-bottom: @border-gray-tint;
+	}
+}
+
+.row {
+	.col-30 {
+		width: 26%;
+		margin-left: 4%;
+	}
+	.col-70 {
+		width: 66%;
+		margin-left: 4%;
+	}
 }
