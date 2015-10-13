@@ -36,6 +36,15 @@ $(document).on('click', '.alert-text-title-callback',function () {
   );
 });
 
+
+ $(document).on('click','.button-warning', function () {
+   $.showPreloader();
+    setTimeout(function () {
+        $.hidePreloader();
+    }, 1000);
+});
+
+
  // 操作表事件
  $(document).on('click','.create-actions', function () {
       var buttons1 = [
